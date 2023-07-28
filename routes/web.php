@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TesController;
+use App\Http\Controllers\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/session/tampil', [TesController::class, "tampilkanSession"]);
+Route::get('/session/buat', [TesController::class, "buatSession"]);
+Route::get('/session/hapus', [TesController::class, "hapusSession"]);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
