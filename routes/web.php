@@ -24,7 +24,7 @@ Route::get('/session/buat', [TesController::class, "buatSession"]);
 Route::get('/session/hapus', [TesController::class, "hapusSession"]);
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('admin.index');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
